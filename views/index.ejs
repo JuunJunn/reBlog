@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>博客</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>Hi I'am Jun</p>
+    <header>
+      <h1 class="header"><a href="/">博客网站</a></h1>
+    </header>
+    <main>
+      <ul class="articles">
+        <% for(var i=0; i<blogList.length; i++) { %>
+          <li class="blog-item">
+            <a href="/"><h2 class="title">hello<% blogList[i].title %></h2></a>
+            <p class="content">www<% blogList[i].content %></p>
+            <span class="time">time<% blogList[i].createaAt %></span>
+          </li>
+        <% } %>
+      </ul>
+    </main>
   </body>
 </html>

@@ -1,6 +1,6 @@
-const Sequlize = require('sequelize')
+const Sequelize = require('sequelize')
 
-const sequelize = new Sequlize('my_db', 'root', '', {
+const sequelize = new Sequelize('my_db', 'root', '', {
     host:'localhost',
     dialect:'mysql',
     operatorsAliases: false,
@@ -15,21 +15,21 @@ const sequelize = new Sequlize('my_db', 'root', '', {
 
 const Blog = sequelize.define('blog', {
     id: {
-        type: Sequlize.INTEGER,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     title: {
-        type: Sequlize.STRING
+        type: Sequelize.STRING
     },
     content: {
         type: Sequelize.STRING
     },
     createdAt: {
-        type: Sequlize.DATE
+        type: Sequelize.DATE
     },
     updatedAt: {
-        type: Sequlize.DATE
+        type: Sequelize.DATE
     }
 }, {
     freezeTableName: true
