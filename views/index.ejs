@@ -12,9 +12,13 @@
       <ul class="articles">
         <% for(var i=0; i<blogList.length; i++) { %>
           <li class="blog-item">
-            <a href="/"><h2 class="title">hello <%= blogList[i].dataValues.title %></h2></a>
-            <p class="content">www <%= blogList[i].dataValues.content %></p>
-            <span class="time">time <%= blogList[i].dataValues.createdAt %></span>
+            <a href="/api/blog?id=<%= blogList[i].dataValues.id %>"><h2 class="title"><%= blogList[i].dataValues.title %></h2></a>
+            <p class="content"><%= blogList[i].dataValues.content %></p>
+            <div class="option">
+              <span class="date"><%= blogList[i].dataValues.createdAt %></span>
+              <span class="btn-editor">编辑</span>
+              <span class="btn-del">删除</span>
+            </div>  
           </li>
         <% } %>
       </ul>

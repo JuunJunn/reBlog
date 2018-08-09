@@ -15,8 +15,8 @@ const findById = (id) => {
                             id: result.id,
                             title: result.title,
                             content: result.content,
-                            createAt: result.createdAt,
-                            updateAt: result.updatedAt
+                            createdAt: result.createdAt,
+                            updatedAt: result.updatedAt
                         }
                     }
                 }else {
