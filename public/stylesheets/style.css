@@ -56,7 +56,10 @@ a:hover {
 
 .content {
   font-size: 14px;
-  color: rgb(88, 88, 88)
+  color: rgb(88, 88, 88);
+  height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .blog-item .option {
   display: flex;

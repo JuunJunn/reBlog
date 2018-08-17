@@ -3,11 +3,11 @@ module.exports = {
     name      : 'BLog',
     script    : 'bin/www',
     env: {
-      PORT:3001,
+      PORT:3000,
       NODE_ENV: 'development'
     },
     env_production : {
-      PORT:8080,
+      PORT:80,
       NODE_ENV: 'production'
     }
   }],
