@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= blogData.title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/detail.css">
 </head>
 <body>
+    <header class="header">
+      <h1 class="webName"><a href="/">首页</a></h1>
+      <div class="editor">编辑</div>
+    </header>
     <article>
         <h1 class="title"><%= blogData.title %></h1>
-        <span class="date"><%= blogData.updatedAt %></span>
+        <div class="date"><%= blogData.updatedAt %></div>
         <p class="content"><%= blogData.content %></p>
     </article>
+
+    <script>
+        const editor = document.getElementsByClassName('editor')[0]
+        editor.addEventListener('click', () => {
+            location.href = `/api/blogEditor${location.search}`
+        }, false)
+    </script>
 </body>
 </html>

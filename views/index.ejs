@@ -10,6 +10,7 @@
   <body>
     <header class="header">
       <h1 class="webName"><a href="/">博客网站</a></h1>
+      <div class="writeBlog"><a href="/api/blog_write">写博客</a></div>
     </header>
     <main>
       <ul class="articles">
@@ -20,9 +21,10 @@
             </h2>
             <p class="content"><%= blogList[i].dataValues.content %></p>
             <div class="option">
-              <span class="date"><%= blogList[i].dataValues.createdAt %></span>
-              <span class="btn-editor"><a href="/api/blogEditor?id=<%= blogList[i].dataValues.id %>"></a></span>
-              <span class="btn-del">删除</span>
+              <span class="date"><%= blogList[i].dataValues.createdAt %> 创建</span>
+              <span class="update-date">更新于<%= blogList[i].dataValues.updatedAt %></span>
+              <span class="btn-editor"><a href="/api/blogEditor?id=<%= blogList[i].dataValues.id %>">编辑</a></span>
+              <span class="btn-del" id="<%= blogList[i].dataValues.id %>">删除</span>
             </div>  
           </li>
         <% } %>

@@ -121,7 +121,7 @@ const updateBlog = async (param) => {
     if(result[0]) {
         return {
             code: 0,
-            message: "update success",
+            message: "success",
             data: {
                  id: param.id
             }
@@ -129,7 +129,7 @@ const updateBlog = async (param) => {
     }else {
          return {
             code: -5,
-            message: "not found"
+            message: "faild"
         }
     }
 }

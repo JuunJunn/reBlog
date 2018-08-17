@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建博客</title>
+</head>
+<body>
+    <header class="header">
+      <h1 class="webName"><a href="/">首页</a></h1>
+    </header>
+    <main >
+        标题：<input type="text"  name="title" class="blog-title"><br>
+        内容：<input type="text"  name="content" class="blog-content"><br>
+        <input type="submit" value="创建" class="crtBlog">
+    </main>
+
+    <script>
+        const crtBlog = document.getElementsByClassName('crtBlog')[0]
+        const title = document.getElementsByClassName('blog-title')[0]
+        const content = document.getElementsByClassName('blog-content')[0]
+
+        crtBlog.addEventListener('click', (e) => {
+
+            const data = `title=${title.value}&content=${content.value}`
+
+
+            const xhr = new XMLHttpRequest()
+
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState === 4) {
+                  callback(JSON.parse(xhr.responseText))  
+                }
+            }
+
+            xhr.open('post', '/api/blog_create')
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+            xhr.send(data)
+
+        }, false)
+
+
+        function callback(data) {
+            if(data.code === 0) {
+                location.href = `/api/blog?id=${data.data.id}`
+            }else {
+                alert('创建失败')
+            }
+        }
+    </script>
+</body>
+</html>
