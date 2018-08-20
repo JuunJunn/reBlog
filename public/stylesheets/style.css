@@ -54,7 +54,7 @@ a:hover {
   color:  #00B7FF;
 }
 
-.content {
+.blog-item .content {
   font-size: 14px;
   color: rgb(88, 88, 88);
   height: 20px;
@@ -79,4 +79,13 @@ a:hover {
 }
 .option .btn-editor {
   padding: 0px 10px;
+}
+
+.btn-del {
+  cursor: pointer;
+  color: rgb(156, 54, 40);
+}
+
+.btn-del:hover {
+  color: rgb(212, 32, 0);
 }

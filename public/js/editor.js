@@ -5,8 +5,8 @@ $(function() {
             url:'/api/blog_update',
             data: {
                 id: document.getElementsByTagName('input')[0].value,
-                title: document.getElementsByTagName('input')[1].value,
-                content: document.getElementsByTagName('input')[2].value
+                title: document.getElementsByTagName('input')[1].val,
+                content: document.getElementsByTagName('textarea')[0].value
             },
             success: data => {
                 if(data.code === 0) {

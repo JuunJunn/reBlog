@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= blogData.title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/editor.css">
 </head>
 <body>
     <header class="header">
@@ -13,7 +15,7 @@
     <main >
         Id: <input type="text" value="<%= blogData.id %>" name="id"><br>
         标题：<input type="text" value="<%= blogData.title %>" name="title"><br>
-        内容：<input type="text" value="<%= blogData.content %>" name="content"><br>
+        内容：<textarea  name="content"><%= blogData.content %></textarea><br>
         <input type="submit" value="更新" class="btn-update">
     </main>
     <script
