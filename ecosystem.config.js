@@ -15,7 +15,7 @@ module.exports = {
   deploy : {
     production : {
       user : 'root',
-      host : '67.216.209.107',
+      host : '104.245.190.222',
       port: '28328',
       ref  : 'origin/master',
       repo : 'git@github.com:JuunJunn/reBlog.git',
