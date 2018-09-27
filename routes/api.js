@@ -10,6 +10,7 @@ router.get('/blog', async (req, res) => {
   const id = parseInt(req.query.id)
   const cors = req.query.cors
   if(cors && req.body.origin === 'http://127.0.0.1:3000') {
+    res.setHeader('Access-Contorl-Allow-Origin', 'http://127.0.0.1:3000')
     if(id) {
       const result = await utilApi.findById(id)
       res.render('detail', {blogData: result.data})
